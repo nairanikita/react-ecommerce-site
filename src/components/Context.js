@@ -74,7 +74,7 @@ class ProductProvider extends Component {
     const index=tempCart.indexOf(selectedProduct);
     const product=tempCart[index];
     product.count=product.count+1;
-    product.total=product.total*product.price;
+    product.total=product.total+product.price;
     this.setState(()=>{return{cart:[...tempCart]}},()=>{this.addTotals()
     })
 
@@ -91,7 +91,7 @@ class ProductProvider extends Component {
         this.removeItem(id)
     }
     else{
-    product.total=product.count * product.price;
+    product.total=product.count *product.price;
     
     this.setState(
         () => {
